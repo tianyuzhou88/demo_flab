@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-    <parameter name="Browser" value="Chrome" />
-    <parameter name="Grid" value="no" />
+    <parameter name="Browser" value="Chrome_Docker" />
+    <parameter name="Grid" value="yes" />
     <parameter name="BaseUrl" value="https://www.fidelitylabs.com" />
     <parameter name="Message" value="We are change makers" />
 
     <test name="Request User From Licensing Portal">
         <classes>
-            <class name="UserManagement">
+            <class name="DemoTest">
             </class>
         </classes>
     </test>

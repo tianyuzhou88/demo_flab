@@ -48,6 +48,7 @@ public class TestBaseCase {
 			log.info("Reading AccountRegistrationTest.xml Configuration:"+Browser+"Initialize Browser\n");
 			try {
 				TestBaseCase.driver =setDriver(Browser);
+				driver.manage().window().fullscreen();
 			} catch (Exception e) {
 				log.error("Fail to Initialize the browser from Configuration");
 				e.printStackTrace();
@@ -58,6 +59,7 @@ public class TestBaseCase {
 			log.info("reading xml config：browser:"+driver);
 			try {
                 TestBaseCase.driver=setRemoteDriver(Browser);
+                driver.manage().window().fullscreen();
 			} catch (Exception e) {
 				// TODO: handle exception
 				log.error("Fail to Initialize the browser from Configuration");
@@ -84,17 +86,7 @@ public class TestBaseCase {
 		{
 			case "Firefox":
 				WebDriverManager.firefoxdriver().setup();
-				DesiredCapabilities desiredCapabilities = DesiredCapabilities.firefox();
-				FirefoxOptions firefoxOptions = new FirefoxOptions();
-				FirefoxProfile firefoxProfile = new FirefoxProfile();
-				firefoxProfile.setAcceptUntrustedCertificates(true);
-				firefoxProfile.setPreference("browser.download.folderList", 2);
-				firefoxProfile.setPreference("browser.download.manager.showWhenStarting", false);
-				firefoxProfile.setPreference("browser.download.dir", workingDir);
-				firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/yml, text/txt, application/octet-stream");
-				firefoxOptions.setProfile(firefoxProfile);
-				desiredCapabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
-				TestBaseCase.driver = new FirefoxDriver(desiredCapabilities);
+				TestBaseCase.driver = new FirefoxDriver();
 				break;
             case "Chrome":
 				WebDriverManager.chromedriver().setup();
@@ -153,15 +145,15 @@ public class TestBaseCase {
                 DesiredCapabilities capabilities3=DesiredCapabilities.chrome();
 				capabilities3.setCapability("e34:per_test_timeout_ms", 120000);
                 driver= new RemoteWebDriver(new URL(Docker_NODE_URL), capabilities3);
-                System.out.println("Live View URL > http://64.102.211.47:4444/grid/admin/live");
-                System.out.println("DashBoard > http://64.102.211.47:4444/grid/admin/live");
+                System.out.println("Live View URL > http://localhost:4444/grid/admin/live");
+                System.out.println("DashBoard > http://localhost:4444/DashBoard");
                 break;
             case "FireFox_Docker":
                 DesiredCapabilities capabilities4=DesiredCapabilities.firefox();
 				capabilities4.setCapability("e34:per_test_timeout_ms", 120000);
                 driver= new RemoteWebDriver(new URL(Docker_NODE_URL), capabilities4);
-                System.out.println("Live View URL > http://64.102.211.47:4444/grid/admin/live");
-                System.out.println("DashBoard > http://64.102.211.47:4444/grid/admin/live");
+                System.out.println("Live View URL > http://localhost:4444/grid/admin/live");
+                System.out.println("DashBoard > http://localhost:4444/DashBoard");
                 break;
 			default:
                 TestBaseCase.driver=new ChromeDriver();
