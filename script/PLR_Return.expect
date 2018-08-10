@@ -1,0 +1,17 @@
+#!/usr/bin/expect
+
+set timeout 5
+set device_ip [lindex $argv 0]
+spawn ssh -o "StrictHostKeyChecking no" admin@$device_ip
+expect "Password:"
+send "CiscoAdmin!2345\r"
+expect ">"
+send "en\r"
+expect "Password:"
+send "CiscoAdmin!2345\r"
+expect "#"
+send "license smart reservation return\n"
+expect "remove the license reservation"
+send "yes\r"
+expect "Enter this return code in Cisco Smart Software Manager portal"
+exit

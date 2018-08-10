@@ -1,0 +1,12 @@
+{
+  "ldapTitle" : "Skywalker",
+  "ldapIp" : "skywalker.cisco.com",
+  "ldapPort" : "389",
+  "ldapUid" : "uid",
+  "ldapBaseDn" : "cn=users,dc=skywalker,dc=cisco,dc=com",
+  "ldapBindDn" : "uid=root,cn=users,dc=skywalker,dc=cisco,dc=com",
+  "ldapPwd" : "password",
+  "ldapGroups" : "cn=groups,dc=skywalker,dc=cisco,dc=com",
+  "testUsr" : "tianyuZ",
+  "testPwd" : "U3Rhc2gtOTg="
+}

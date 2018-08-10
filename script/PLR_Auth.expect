@@ -1,0 +1,18 @@
+#!/usr/bin/expect
+
+set device_ip [lindex $argv 0]
+set auth_code [lindex $argv 1]
+set timeout 5
+spawn ssh -o "StrictHostKeyChecking no" admin@$device_ip
+expect "Password:"
+send "CiscoAdmin!2345\r"
+expect ">"
+send "en\r"
+expect "Password:"
+send "CiscoAdmin!2345\r"
+expect "#"
+send "license smart reservation install $auth_code\n"
+expect "#"
+send "show license status\r"
+expect "AUTHORIZED"
+exit

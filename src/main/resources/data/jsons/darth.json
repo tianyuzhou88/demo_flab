@@ -1,0 +1,12 @@
+{
+  "ldapTitle" : "Darth",
+  "ldapIp" : "darth.cisco.com",
+  "ldapPort" : "389",
+  "ldapUid" : "uid",
+  "ldapBaseDn" : "cn=users,dc=darth,dc=cisco,dc=com",
+  "ldapBindDn" : "uid=root,cn=users,dc=darth,dc=cisco,dc=com",
+  "ldapPwd" : "password",
+  "ldapGroups" : "cn=groups,dc=darth,dc=cisco,dc=com",
+  "testUsr" : "jogaff",
+  "testPwd" : "Q2lzY29MYWIhMjM0NQ=="
+}
