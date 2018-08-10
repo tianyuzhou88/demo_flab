@@ -8,7 +8,7 @@ import org.webdriver.seleniumUI.utils.TestBaseCase;
 import java.io.IOException;
 
 
-public class UserManagement extends TestBaseCase {
+public class DemoTest extends TestBaseCase {
 
 
     private String password = null;
