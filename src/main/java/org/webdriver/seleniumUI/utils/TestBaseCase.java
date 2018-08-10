@@ -146,14 +146,14 @@ public class TestBaseCase {
 				capabilities3.setCapability("e34:per_test_timeout_ms", 120000);
                 driver= new RemoteWebDriver(new URL(Docker_NODE_URL), capabilities3);
                 System.out.println("Live View URL > http://localhost:4444/grid/admin/live");
-                System.out.println("DashBoard > http://localhost:4444/DashBoard");
+                System.out.println("DashBoard > http://localhost:4444/dashboard");
                 break;
             case "FireFox_Docker":
                 DesiredCapabilities capabilities4=DesiredCapabilities.firefox();
 				capabilities4.setCapability("e34:per_test_timeout_ms", 120000);
                 driver= new RemoteWebDriver(new URL(Docker_NODE_URL), capabilities4);
                 System.out.println("Live View URL > http://localhost:4444/grid/admin/live");
-                System.out.println("DashBoard > http://localhost:4444/DashBoard");
+                System.out.println("DashBoard > http://localhost:4444/dashboard");
                 break;
 			default:
                 TestBaseCase.driver=new ChromeDriver();

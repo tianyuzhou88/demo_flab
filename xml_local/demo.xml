@@ -6,7 +6,7 @@
     <parameter name="BaseUrl" value="https://www.fidelitylabs.com" />
     <parameter name="Message" value="We are change makers" />
 
-    <test name="Request User From Licensing Portal">
+    <test name="demo Test for FL">
         <classes>
             <class name="DemoTest">
             </class>
